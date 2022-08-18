@@ -4,10 +4,55 @@
 <head>
     <link rel="stylesheet" href="style.css" />
     <style>
+        * {
+            border: 2px solid black;
+        }
+
+        html {
+            background-color: tan;
+        }
+
         h1 {
             color: blue;
             /* css는 속성이름, 속성값 순서임 */
         }
+
+        div {
+            background-color: gray;
+            height: 150px;
+            width: 150px;
+            border: 2px solid black;
+            /* 박스옆에는 다른 박스가 오지 않고 바로 enter             */
+        }
+
+        span {
+            display: block;
+            /* inline의 span을 block 시킨다. */
+            background-color: blueviolet;
+        }
+
+        body {
+            margin: 20px;
+            padding: 20px;
+            background-color: thistle;
+        }
+
+        #lastone {
+            background-color: aqua;
+            padding: 20px;
+        }
+
+        #thirdone {
+            background-color: blueviolet;
+            padding: 20px;
+
+        }
+
+        span {
+            border-style: dotted;
+        }
+
+        /* element (ex body, span)가 아니므로 #bla 로 표시 */
     </style>
     <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="https://nomadcoders.co/m.png" />
     <!-- ->rel 속성은 현재 문서와 링크된 문서 사이의 연관 관계(relationship)를 명시(링크와 문서사이의 연관관계를 알려줘서 링크에 대한 정보를 수집하기 위해 사용)합니다.
@@ -20,29 +65,46 @@
 </head>
 
 <body>
-    <h1>yes!</h1>
-    <form>
+    <div>
         <div>
-            <label for="Profile">Profile Photo</label>
-            <input id="Profile" type="file" accept=".png,.pdf" />
-            <input type="color" />
+            <div id="thirdone">
+                yes!
+                <div id="lastone">no!</div>
+            </div>
         </div>
+    </div>
+    <div> 2</div>
+    <div>3</div>
+    <span>what</span>
+    <span>hat</span>
+    <span>d3</span>
+    <a href="#">click this to another land</a>
 
-        <label for="first-name">First Name</label>
-        <input id="first-name" required placeholder="Name" type="text" />
-        <input required placeholder="password" type="password" />
-        <input type="submit" value="Create Account please" />
-        <input id="pattren" pattern="text" value="yes" />
-        <div>
-            <input type="button" value="click me" />
-        </div><!-- id는 어떤 태그든 넣을 수 있는 attribute임 -->
-
-    </form>
 </body>
 
 </html>
-<!-- og 카카오톡 섬네일, 트위터 등도 가능-->
-<!-- tag를 검색할때 mdn 검색하기 -->
-<!-- 글자 동시에 바꾸는법 cntl+d -->
-<!-- id는 어느 태그에서도 쓸수있는 어트리뷰트, but src같은 tag는 image태그에서만 가능. 즉 쓸수있는태그와 쓸수없는태그를 잘 생각 -->
-<tagname required attrname="attrvalue">blalalalala</tagname>
+
+<!-- 요약
+div는 옆에 다른 div가 오지 않는다.
+span은 옆에 다른 span이 올 수 있다.
+link는 옆에 올 수 있다.
+p는 옆에 올 수 없다.
+옆에 다른 요소가 못 오는걸 block
+올 수 있는걸 inline라고 한다. (in the same line)
+inline의 대표적인 태그 span, link, img -->
+
+<!-- inline은 높이와 너비가 없음 
+반면 block은 높이와 너비가 있음
+block은 margin padding border의 특성이 있다.
+margin은 경계 밖에 있는 공간 -->
+
+<!-- margin-top: a;
+margin-right: b;
+margin-bottom: c;
+margin-left: d;
+
+를 합쳐서
+
+margin: a b c d; 하셔도 순서대로 적용 됩니다.
+두 개를 줄 경우 상하, 좌우 이다.
+네 개를 줄 경우 시계방향 순으로 적용된다. (상 우 하 좌) -->
