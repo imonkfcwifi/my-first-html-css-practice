@@ -2,8 +2,15 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        h1 {
+            color: blue;
+            /* css는 속성이름, 속성값 순서임 */
+        }
+    </style>
     <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="https://nomadcoders.co/m.png" />
-    <!-- ->rel 속성은 현재 문서와 링크된 문서 사이의 연관 관계(relationship)를 명시합니다.
+    <!-- ->rel 속성은 현재 문서와 링크된 문서 사이의 연관 관계(relationship)를 명시(링크와 문서사이의 연관관계를 알려줘서 링크에 대한 정보를 수집하기 위해 사용)합니다.
         ->홈페이지의 아이콘 -->
     <meta name="descriptio" content="this is my web site!" <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,7 +32,10 @@
         <input id="first-name" required placeholder="Name" type="text" />
         <input required placeholder="password" type="password" />
         <input type="submit" value="Create Account please" />
-        <!-- id는 어떤 태그든 넣을 수 있는 attribute임 -->
+        <input id="pattren" pattern="text" value="yes" />
+        <div>
+            <input type="button" value="click me" />
+        </div><!-- id는 어떤 태그든 넣을 수 있는 attribute임 -->
 
     </form>
 </body>
