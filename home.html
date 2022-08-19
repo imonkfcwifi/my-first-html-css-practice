@@ -37,9 +37,12 @@
         }
 
         body {
-            margin: 20px;
-            padding: 20px;
+            height: 100vh;
             background-color: thistle;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            /* flex의 주축을 쓰려면 결국엔 height가 있어야 함, vh : viewpoint heigh,  화면높이의 100% */
         }
 
         #lastone {
@@ -92,13 +95,17 @@
     <div>3</div>
     <span>what</span>
     <span>hat</span>
+
     <span class="btn tomato">d3</span>
     <span class="btn tomato">d3</span>
     <span class="btn teal">d3</span>
     <a href="#">click this to another land</a>
+
     ///
 </body>
 <!-- class는 id와 달리 여러 요소들에서 쓸 수 있다. -->
+
+
 
 </html>
 
