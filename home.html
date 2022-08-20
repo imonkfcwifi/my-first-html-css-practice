@@ -4,6 +4,11 @@
 <head>
     <link rel="stylesheet" href="style.css" />
     <style>
+        :root {
+            --main-color: blue;
+            --default-border: 50px solid var(--main-color)
+        }
+
         body {
             width: 300px;
             height: 1000vh;
@@ -44,7 +49,7 @@
 
         div>span {
 
-            background-color: yellowgreen;
+            background-color: var(--main-color);
             padding: 5px;
             border-radius: 3px;
             text-decoration: underline;
@@ -83,6 +88,48 @@
             background-color: pink;
             /* name을 포함하고 있다 라는 뜻 */
         }
+
+        button:hover {
+            background-color: aquamarine;
+        }
+
+        a:visited {
+            color: tomato;
+        }
+
+        form {
+            border-radius: 2px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        form:focus-within {
+            background-color: brown;
+            /* 칠드런중 하나 변경시 모두다 번경 */
+        }
+
+        form:hover input {
+            background-color: aqua;
+            /* when you on your curser */
+        }
+
+        form:active input {
+            background-color: aqua;
+            /* when you clicked */
+        }
+
+
+
+        p::selection {
+            color: white;
+            background-color: yellowgreen;
+        }
+
+        p::first-letter {
+            color: blue;
+            size: 100px;
+        }
     </style>
     <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="https://nomadcoders.co/m.png" />
     <!-- ->rel 속성은 현재 문서와 링크된 문서 사이의 연관 관계(relationship)를 명시(링크와 문서사이의 연관관계를 알려줘서 링크에 대한 정보를 수집하기 위해 사용)합니다.
@@ -96,6 +143,7 @@
 </head>
 
 <body>
+    <a href="https://youtube.com">https://youtube.com</a>
     <form>
         <input type="text" placeholder="First name" />
         <input type="password" placeholder="Middle name" />
@@ -103,6 +151,7 @@
 
     </form>
     <div>
+        <button>click me</button>
         <span>hello</span>
         <p>yes i am iron man! <span>tony stark</span></p>
         <span>i am tanios</span>
