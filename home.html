@@ -18,16 +18,36 @@
             height: 300px;
             color: white;
             width: 300px;
-            /* 박스옆에는 다른 박스가 오지 않고 바로 enter             */
+            position: relative;
+            top: 10px;
+            left: 10px;
+            margin: 3px;
+            /* relative의 (부모) 처음시작한 곳에서 기준을 옮긴다 ->relative
+            만약 기준이 없다면 body로 시작 */
+            /* 박스옆에는 다른 박스가 오지 않고 바로 enter    
+            
+            1. positon: static (default)
+            2. position: fixed
+-            element가 처음 생성된 자리에 고정.
+            3. position: relative;
+            - element가 '처음 생성된 위치'를 기준점으로, top bottom left right으로 위치를 조금씩 수정할 수 있다.
+            4. position: absolute;
+            가장 가까운 relative 부모를 기준으로 이동
+            position:relative; 를 해주면 부모가 된다.
+            없으면 body.*/
         }
 
-        #diffrent {
-            top: 5px;
-            left: 200px;
-            background-color: aqua;
-            width: 350px;
-            position: fixed;
+
+        div:last-child {
+            background-color: black;
         }
+
+        span:nth-child(even) {
+            background-color: black;
+            color: teal;
+        }
+
+        /* pseudo Selectors ! */
 
         /* element (ex body, span)가 아니므로 #bla 로 표시 */
     </style>
@@ -42,8 +62,16 @@
 </head>
 
 <body>
-    <div></div>
-    <div id="diffrent"></div>
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+    <span>hello</span>
+
+
 </body>
 <!-- class는 id와 달리 여러 요소들에서 쓸 수 있다. -->
 
