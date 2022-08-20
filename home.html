@@ -42,14 +42,47 @@
             background-color: black;
         }
 
-        span:nth-child(even) {
-            background-color: black;
+        div>span {
+
+            background-color: yellowgreen;
+            padding: 5px;
+            border-radius: 3px;
+            text-decoration: underline;
+            /* > mean direction children */
+        }
+
+        p+span {
+
+            background-color: yellowgreen;
+            padding: 5px;
+            border-radius: 3px;
+            /* means p next span brothers! */
+        }
+
+        p~span {
+            background-color: yellowgreen;
+            padding: 5px;
+            border-radius: 3px;
+            /* if brothers is not immidiatly */
+        }
+
+        span {
+            /* father - childern 순서 */
             color: teal;
         }
+
 
         /* pseudo Selectors ! */
 
         /* element (ex body, span)가 아니므로 #bla 로 표시 */
+        input:required {
+            border-color: tomato;
+        }
+
+        input[placeholder~="First"] {
+            background-color: pink;
+            /* name을 포함하고 있다 라는 뜻 */
+        }
     </style>
     <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="https://nomadcoders.co/m.png" />
     <!-- ->rel 속성은 현재 문서와 링크된 문서 사이의 연관 관계(relationship)를 명시(링크와 문서사이의 연관관계를 알려줘서 링크에 대한 정보를 수집하기 위해 사용)합니다.
@@ -59,17 +92,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home my first website</title>
 
+
 </head>
 
 <body>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
-    <span>hello</span>
+    <form>
+        <input type="text" placeholder="First name" />
+        <input type="password" placeholder="Middle name" />
+        <input required type="password" placeholder="Last name" />
+
+    </form>
+    <div>
+        <span>hello</span>
+        <p>yes i am iron man! <span>tony stark</span></p>
+        <span>i am tanios</span>
+    </div>
 
 
 </body>
