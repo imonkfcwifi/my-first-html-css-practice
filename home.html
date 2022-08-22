@@ -1,200 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="kr">
 
 <head>
-    <link rel="stylesheet" href="style.css" />
+
+    <title>Document</title>
     <style>
-        :root {
-            --main-color: blue;
-            --default-border: 50px solid var(--main-color)
-        }
-
-        body {
-            width: 300px;
-            height: 1000vh;
+        a {
             color: white;
-            background-color: teal;
-            /* flex의 주축을 쓰려면 결국엔 height가 있어야 함, vh : viewpoint heigh,  화면높이의 100% */
+            background-color: tomato;
+            text-decoration: none;
+            padding: 3px 5px;
+            border-radius: 5px;
+            transition: background-color 1s ease-in-out, color 1s ease-in-out;
+            /* transition:all 도 가능!
+            이러한 트랜지션은 root 혹은 element에 있어야 한다.*/
         }
 
-        div {
-
-            background-color: gray;
-            height: 300px;
-            color: white;
-            width: 300px;
-            position: relative;
-            top: 10px;
-            left: 10px;
-            margin: 3px;
-            /* relative의 (부모) 처음시작한 곳에서 기준을 옮긴다 ->relative
-            만약 기준이 없다면 body로 시작 */
-            /* 박스옆에는 다른 박스가 오지 않고 바로 enter    
-            
-            1. positon: static (default)
-            2. position: fixed
--            element가 처음 생성된 자리에 고정.
-            3. position: relative;
-            - element가 '처음 생성된 위치'를 기준점으로, top bottom left right으로 위치를 조금씩 수정할 수 있다.
-            4. position: absolute;
-            가장 가까운 relative 부모를 기준으로 이동
-            position:relative; 를 해주면 부모가 된다.
-            없으면 body.*/
-        }
-
-
-        div:last-child {
-            background-color: black;
-        }
-
-        div>span {
-
-            background-color: var(--main-color);
-            padding: 5px;
-            border-radius: 3px;
-            text-decoration: underline;
-            /* > mean direction children */
-        }
-
-        p+span {
-
-            background-color: yellowgreen;
-            padding: 5px;
-            border-radius: 3px;
-            /* means p next span brothers! */
-        }
-
-        p~span {
-            background-color: yellowgreen;
-            padding: 5px;
-            border-radius: 3px;
-            /* if brothers is not immidiatly */
-        }
-
-        span {
-            /* father - childern 순서 */
-            color: teal;
-        }
-
-
-        /* pseudo Selectors ! */
-
-        /* element (ex body, span)가 아니므로 #bla 로 표시 */
-        input:required {
-            border-color: tomato;
-        }
-
-        input[placeholder~="First"] {
-            background-color: pink;
-            /* name을 포함하고 있다 라는 뜻 */
-        }
-
-        button:hover {
-            background-color: aquamarine;
-        }
-
-        a:visited {
+        /* ease-in-function
+-브라우저에게 애니메이션이 어떻게 변화하는지를 알려준다.
+1) linear: 요소를 직선으로 움직이게 만들어줌. 같은 속도로 움직임.
+2) ease-in: 처음에 좀 더 빨라지면서 움직임.
+3) ease-out: 끝에서 느려짐.
+4) ease-in-out: 처음에 느렸다가 중간에 가속했다가 끝에 느려지면서 끝남.
+5)cubic-bazier : 사용자가 직접 애니메이션을 만들어 적용 */
+        a:hover {
             color: tomato;
-        }
-
-        form {
-            border-radius: 2px;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        form:focus-within {
-            background-color: brown;
-            /* 칠드런중 하나 변경시 모두다 번경 */
-        }
-
-        form:hover input {
-            background-color: aqua;
-            /* when you on your curser */
-        }
-
-        form:active input {
-            background-color: aqua;
-            /* when you clicked */
-        }
-
-
-
-        p::selection {
-            color: white;
-            background-color: yellowgreen;
-        }
-
-        p::first-letter {
-            color: blue;
-            size: 100px;
+            background-color: wheat;
         }
     </style>
-    <link rel="shortcut icon" sizes="16x16 32x32 64x64" href="https://nomadcoders.co/m.png" />
-    <!-- ->rel 속성은 현재 문서와 링크된 문서 사이의 연관 관계(relationship)를 명시(링크와 문서사이의 연관관계를 알려줘서 링크에 대한 정보를 수집하기 위해 사용)합니다.
-        ->홈페이지의 아이콘 -->
-    <meta name="descriptio" content="this is my web site!" <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home my first website</title>
-
-
 </head>
 
 <body>
-    <a href="https://youtube.com">https://youtube.com</a>
-    <form>
-        <input type="text" placeholder="First name" />
-        <input type="password" placeholder="Middle name" />
-        <input required type="password" placeholder="Last name" />
-
-    </form>
-    <div>
-        <button>click me</button>
-        <span>hello</span>
-        <p>yes i am iron man! <span>tony stark</span></p>
-        <span>i am tanios</span>
-    </div>
-
-
+    <a href="#">Go Home2</a>
 </body>
-<!-- class는 id와 달리 여러 요소들에서 쓸 수 있다. -->
-
-
 
 </html>
-
-<!-- 요약
-div는 옆에 다른 div가 오지 않는다.
-span은 옆에 다른 span이 올 수 있다.
-link는 옆에 올 수 있다.
-p는 옆에 올 수 없다.
-옆에 다른 요소가 못 오는걸 block
-올 수 있는걸 inline라고 한다. (in the same line)
-inline의 대표적인 태그 span, link, img -->
-
-<!-- inline은 높이와 너비가 없음 
-반면 block은 높이와 너비가 있음
-block은 margin padding border의 특성이 있다.
-margin은 경계 밖에 있는 공간 -->
-
-<!-- margin-top: a;
-margin-right: b;
-margin-bottom: c;
-margin-left: d;
-
-를 합쳐서
-
-margin: a b c d; 하셔도 순서대로 적용 됩니다.
-두 개를 줄 경우 상하, 좌우 이다.
-네 개를 줄 경우 시계방향 순으로 적용된다. (상 우 하 좌) -->
-
-<!-- '21 1.18
-- span은 inline이기 때문에 높이와 너비를 가질 수 없으며, 그래서 위, 아래에 margin을 가질 수 없다.
-- 하지만 padding은 사방에 가질 수 있다.
-- 이와 같은 상황에 margin을 위, 아래에 적용하고 싶다면, inline 요소를 block으로 바꿔줘야 한다.
-- 온점(.)은 class명이라는 뜻.
-- id⇒ #tomato는 id="tomato" class⇒ .tomato는 class="tomato"
-- id명과 다르게 class명은 유일할 필요가 없다. 여러 요소들이 같이 쓸 수 있다.
-- 와 같이 class 속에는 btn과 tomato를 연이어 넣어 각각 다른 class 속성을 동시에 부여할 수도 있다. -->
