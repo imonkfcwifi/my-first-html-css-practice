@@ -5,16 +5,49 @@
 
     <title>Document</title>
     <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes superSexyCoinFlip {
+
+            0% {
+                transform: rotateY(0);
+            }
+
+            50% {
+                transform: rotateY(360deg) translateY(-100px);
+            }
+
+            100% {
+                transform: rotateY(0);
+            }
+        }
+
         a {
             color: white;
             background-color: tomato;
             text-decoration: none;
             padding: 3px 5px;
             border-radius: 5px;
-            transition: background-color 1s ease-in-out, color 1s ease-in-out;
+            transition: background-color 1s ease-in-out,
+                border-radius 5s ease-in-out;
             /* transition:all 도 가능!
             이러한 트랜지션은 root 혹은 element에 있어야 한다.*/
         }
+
+        img {
+            border: 1px solid black;
+            border-radius: 50%;
+            width: 100px;
+            animation: superSexyCoinFlip 5s ease-in-out infinite
+                /* rotate(3d로 변형중) */
+                /* radious 50%는 원이된다 */
+        }
+
 
         /* ease-in-function
 -브라우저에게 애니메이션이 어떻게 변화하는지를 알려준다.
@@ -26,11 +59,13 @@
         a:hover {
             color: tomato;
             background-color: wheat;
+            border-radius: 20px;
         }
     </style>
 </head>
 
 <body>
+    <img src="logo.jpg" />
     <a href="#">Go Home2</a>
 </body>
 
