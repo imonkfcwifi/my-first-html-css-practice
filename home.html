@@ -10,63 +10,45 @@
             height: 100vh;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
         }
 
-        @keyframes superSexyCoinFlip {
+        div {
+            background-color: teal;
+            width: 200px;
+            height: 200px;
 
-            0% {
-                transform: rotateY(0);
+        }
+
+        @media screen and (max-width:800px) and (min-width:750px) and (orientation: landscape) {
+            div {
+                background-color: tomato;
+            }
+        }
+
+        @media screen and (orientation:landscape) {
+            span {
+                display: none;
             }
 
-            50% {
-                transform: rotateY(360deg) translateY(-100px);
+        }
+
+        span {
+            font-size: 20px;
+            font-style: inherit;
+        }
+
+        /* @media screen and (max-width:300px) and (min-width:250px) {
+            div {
+                background-color: white;
             }
-
-            100% {
-                transform: rotateY(0);
-            }
-        }
-
-        a {
-            color: white;
-            background-color: tomato;
-            text-decoration: none;
-            padding: 3px 5px;
-            border-radius: 5px;
-            transition: background-color 1s ease-in-out,
-                border-radius 5s ease-in-out;
-            /* transition:all 도 가능!
-            이러한 트랜지션은 root 혹은 element에 있어야 한다.*/
-        }
-
-        img {
-            border: 1px solid black;
-            border-radius: 50%;
-            width: 100px;
-            animation: superSexyCoinFlip 5s ease-in-out infinite
-                /* rotate(3d로 변형중) */
-                /* radious 50%는 원이된다 */
-        }
-
-
-        /* ease-in-function
--브라우저에게 애니메이션이 어떻게 변화하는지를 알려준다.
-1) linear: 요소를 직선으로 움직이게 만들어줌. 같은 속도로 움직임.
-2) ease-in: 처음에 좀 더 빨라지면서 움직임.
-3) ease-out: 끝에서 느려짐.
-4) ease-in-out: 처음에 느렸다가 중간에 가속했다가 끝에 느려지면서 끝남.
-5)cubic-bazier : 사용자가 직접 애니메이션을 만들어 적용 */
-        a:hover {
-            color: tomato;
-            background-color: wheat;
-            border-radius: 20px;
-        }
+        } */
     </style>
 </head>
 
 <body>
-    <img src="logo.jpg" />
-    <a href="#">Go Home2</a>
+    <div></div>
+    <span>Please Flip your Phone</span>
 </body>
 
 </html>
